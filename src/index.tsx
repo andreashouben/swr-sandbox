@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {worker} from './mocks/browser';
+
+worker.start({onUnhandledRequest:'bypass'})
 
 ReactDOM.render(
   <React.StrictMode>
