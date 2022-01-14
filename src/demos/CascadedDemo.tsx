@@ -1,5 +1,5 @@
 import React from 'react';
-import {useCascade, useErrorGet} from '../api/api';
+import {useCascade} from '../api/api';
 import Loader from '../components/Loader';
 
 const CascadeGet = () => {
