@@ -4,6 +4,7 @@ import {Container, Nav, Navbar} from 'react-bootstrap';
 import {Link, Route, Routes, useLocation} from 'react-router-dom';
 import {SimpleDemo} from './demos/SimpleDemo';
 import {ErrorDemo} from './demos/ErrorDemo';
+import {CascadedDemo} from './demos/CascadedDemo';
 
 const Home = () => <h1>You're home</h1>
 
@@ -17,7 +18,9 @@ const Outlet = () =>{
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="/simpledemo" element={<SimpleDemo/>}/>
-                <Route path="/morecomplexdemo" element={<ErrorDemo/>}/>
+                <Route path="/errordemo" element={<ErrorDemo/>}/>
+                <Route path="/cascadeddemo" element={<CascadedDemo/>}/>
+
             </Routes>
 
     </Container>
@@ -32,7 +35,8 @@ const App = () => {
                     <Navbar.Brand href={'/'}>SWR-Sandbox</Navbar.Brand>
                     <Nav className={"me-auto"} activeKey={location.pathname}>
                         <Nav.Link as={Link} to='/simpledemo'>Simple Demo</Nav.Link>
-                        <Nav.Link as={Link} to='/morecomplexdemo'>Error Demo</Nav.Link>
+                        <Nav.Link as={Link} to='/errordemo'>Error Demo</Nav.Link>
+                        <Nav.Link as={Link} to='/cascadeddemo'>Cascaded Demo</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

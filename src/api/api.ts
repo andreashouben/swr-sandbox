@@ -9,3 +9,9 @@ export const useSlowGet = () => {
 export const useErrorGet = () => {
     return useSWR('/errorget', fetcher, {shouldRetryOnError: false});
 }
+
+export const useCascade = () => {
+    const {data: id1} = useSWR(() => `cascade/1`, fetcher)
+    const {data: id2} = useSWR(() => `cascade/${id1}`, fetcher)
+    return useSWR(() => `cascade/${id2}`, fetcher)
+}
