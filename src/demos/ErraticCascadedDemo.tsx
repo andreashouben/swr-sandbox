@@ -20,7 +20,7 @@ export const ErraticCascadedDemo = () => {
 
     return <>
         <h1>Error Demo</h1>
-        <p>This loads cascaded backend calls.</p>
+        <p>This loads three dependent backend calls and returns an error if a call fails.</p>
         <ErraticCascadeGet/>
     </>;
 

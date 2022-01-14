@@ -15,7 +15,7 @@ export const SimpleDemo = () => {
 
     return <>
         <h1>Simple Demo</h1>
-        <h5>Load an element from backend that takes a while</h5>
+        <p>Load an element from backend that takes a while</p>
         <SlowGet/>
     </>;
 }

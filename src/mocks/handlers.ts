@@ -1,4 +1,4 @@
-import {PathParams, ResponseFunction, ResponseTransformer, rest, RestContext, RestRequest} from 'msw';
+import {ResponseFunction, rest, RestContext, RestRequest} from 'msw';
 
 function raisepassedId(req: RestRequest, res: ResponseFunction, ctx: RestContext) {
     const id = Number(req.params.id)
@@ -11,7 +11,7 @@ function createError(req: RestRequest, res: ResponseFunction, ctx: RestContext) 
     const {id} = req.params
     if (id !== undefined) {
         return res(
-            ctx.status(500, `Error when fetching id ${id}`),
+            ctx.status(500, `Error when fetching call ${id}`),
             ctx.delay(1000)
         )
     }
