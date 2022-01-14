@@ -1,11 +1,27 @@
 import React from 'react';
 import './App.css';
 import {Container, Nav, Navbar} from 'react-bootstrap';
-import {Route, Routes, useLocation} from 'react-router-dom';
-import {SimpleDemo} from './SimpleDemo';
+import {Link, Route, Routes, useLocation} from 'react-router-dom';
+import {SimpleDemo} from './demos/SimpleDemo';
+import {ErrorDemo} from './demos/ErrorDemo';
 
 const Home = () => <h1>You're home</h1>
-const MoreComplexDemo = () => <h1>More Complex Demo</h1>
+
+
+
+const Outlet = () =>{
+
+
+    return <Container>
+
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/simpledemo" element={<SimpleDemo/>}/>
+                <Route path="/morecomplexdemo" element={<ErrorDemo/>}/>
+            </Routes>
+
+    </Container>
+}
 
 const App = () => {
     const location = useLocation();
@@ -15,18 +31,12 @@ const App = () => {
                 <Container>
                     <Navbar.Brand href={'/'}>SWR-Sandbox</Navbar.Brand>
                     <Nav className={"me-auto"} activeKey={location.pathname}>
-                        <Nav.Link href='/simpledemo'>Simple Demo</Nav.Link>
-                        <Nav.Link href='/morecomplexdemo'>More Complex Demo</Nav.Link>
+                        <Nav.Link as={Link} to='/simpledemo'>Simple Demo</Nav.Link>
+                        <Nav.Link as={Link} to='/morecomplexdemo'>Error Demo</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>
-            <Container>
-                <Routes>
-                    <Route path="/" element={<Home/>}/>
-                    <Route path="/simpledemo" element={<SimpleDemo/>}/>
-                    <Route path="/morecomplexdemo" element={<MoreComplexDemo/>}/>
-                </Routes>
-            </Container>
+            <Outlet />
         </div>
     );
 };

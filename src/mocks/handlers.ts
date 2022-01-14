@@ -14,7 +14,7 @@ export const handlers = [
     rest.get('/errorget', (req, res, ctx) =>{
         return res(
             ctx.status(500),
-            ctx.delay(2000)
+            ctx.delay(1000)
         )
     })
 ]
