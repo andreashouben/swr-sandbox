@@ -5,6 +5,7 @@ import {Link, Route, Routes, useLocation} from 'react-router-dom';
 import {SimpleDemo} from './demos/SimpleDemo';
 import {ErrorDemo} from './demos/ErrorDemo';
 import {CascadedDemo} from './demos/CascadedDemo';
+import {ErraticCascadedDemo} from './demos/ErraticCascadedDemo';
 
 const Home = () => <h1>You're home</h1>
 
@@ -20,6 +21,7 @@ const Outlet = () =>{
                 <Route path="/simpledemo" element={<SimpleDemo/>}/>
                 <Route path="/errordemo" element={<ErrorDemo/>}/>
                 <Route path="/cascadeddemo" element={<CascadedDemo/>}/>
+                <Route path="/cascadederror" element={<ErraticCascadedDemo/>}/>
 
             </Routes>
 
@@ -37,6 +39,7 @@ const App = () => {
                         <Nav.Link as={Link} to='/simpledemo'>Simple Demo</Nav.Link>
                         <Nav.Link as={Link} to='/errordemo'>Error Demo</Nav.Link>
                         <Nav.Link as={Link} to='/cascadeddemo'>Cascaded Demo</Nav.Link>
+                        <Nav.Link as={Link} to='/cascadederror'>Cascaded Error Demo</Nav.Link>
                     </Nav>
                 </Container>
             </Navbar>

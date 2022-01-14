@@ -1,11 +1,14 @@
 import React from 'react';
 import {useErrorGet} from '../api/api';
 import Loader from '../components/Loader';
+import Error from '../components/Error';
+
+
 
 const ErrorGet = () => {
     const {data, error} = useErrorGet();
     if (error){
-        return <span>There was an error</span>
+        return <Error />
     }
     if (!data){
         return <Loader />
