@@ -9,7 +9,7 @@ const fetcher: Fetcher<string> = (args: RequestInfo) => fetch(args)
     })
 
 export const useSlowGet = () => {
-    return useSWR<string>('/slowget', fetcher, {refreshInterval = 1000})
+    return useSWR<string>('/slowget', fetcher, {refreshInterval : 1000})
 }
 
 export const useErrorGet = () => {
